@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>どこつぶメイン</title>
+</head>
+<body>
+    <h1>どこつぶメイン</h1>
+
+    <p>{{ name }} さん、ログイン中</p>
+
+    <form action="/post" method="post">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="text" name="text">
+        <input type="submit" value="つぶやく">
+    </form>
+
+    <h2>つぶやき一覧</h2>
+
+    {% for mutter in mutter_list %}
+        <p>{{ mutter }}</p>
+    {% endfor %}
+
+    <p><a href="/">トップへ戻る</a></p>
+</body>
+</html>
